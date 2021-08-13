@@ -4,16 +4,21 @@ import React from 'react';
 class App extends React.Component {
   // App 클래스에 React.Component를 상속시킨다.
   // React.Component 클래스의 기능을 추가한 App 클래스
+  // state 변경시 render 함수를 다시 실행
   state = {
       count: 0
   };
 
   add = () => {
     console.log('add');
+    // state를 직접변경할 수 없음으로 사용 할 수 없는 방식
+    this.state.count = 1;
   };
 
   minus = () => {
     console.log('minus');
+    // state를 직접변경할 수 없음으로 사용 할 수 없는 방식
+    this.state.count = -1;
   };
   
   // 클래스에서는 return 문을 사용할 수 없다.
