@@ -15,7 +15,10 @@ class App extends React.Component {
     // this.state.count = 1;
 
     // setState 함수에 새로운 객체(count)를 적용하여 state에 반영
-    this.setState({count: 1})
+    // this.setState({count: 1})
+
+    // state의 바른 사용법
+    this.setState({count: this.state.count + 1});
   };
 
   minus = () => {
@@ -24,7 +27,10 @@ class App extends React.Component {
     // this.state.count = -1;
 
     // setState 함수에 새로운 객체(count)를 적용하여 state에 반영
-    this.setState({count: -1})
+    // this.setState({count: -1})
+
+    // state의 바른 사용법
+    this.setState({count: this.state.count - 1});
   };
   
   // 클래스에서는 return 문을 사용할 수 없다.
