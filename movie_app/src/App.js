@@ -3,9 +3,15 @@ import React from 'react';
 // 클래스 상속 : 클래스에 다른 클래스의 기능을 추가하는 것을 지칭
 class App extends React.Component {
 
+  // 생명주기 학습 1
   constructor(props) {
     super(props);
     console.log('hello props');
+  }
+
+  // 생명주기 학습 2
+  componentDidMount() {
+    console.log('component rendered');
   }
   // App 클래스에 React.Component를 상속시킨다.
   // React.Component 클래스의 기능을 추가한 App 클래스
@@ -53,7 +59,7 @@ class App extends React.Component {
   // 함수형 컴포넌트는 return 문이 JRX를 반환
   // 클래스형 컴포넌트는 render() 함수가 JSX를 반환
   render() {
-    console.log('render start');
+    console.log("I'm rendering");
     return (
       <div>
         <h1>The number is : {this.state.count}</h1>
