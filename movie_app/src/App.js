@@ -12,13 +12,19 @@ class App extends React.Component {
   add = () => {
     console.log('add');
     // state를 직접변경할 수 없음으로 사용 할 수 없는 방식
-    this.state.count = 1;
+    // this.state.count = 1;
+
+    // setState 함수에 새로운 객체(count)를 적용하여 state에 반영
+    this.setState({count: 1})
   };
 
   minus = () => {
     console.log('minus');
     // state를 직접변경할 수 없음으로 사용 할 수 없는 방식
-    this.state.count = -1;
+    // this.state.count = -1;
+
+    // setState 함수에 새로운 객체(count)를 적용하여 state에 반영
+    this.setState({count: -1})
   };
   
   // 클래스에서는 return 문을 사용할 수 없다.
