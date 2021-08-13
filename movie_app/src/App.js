@@ -2,6 +2,11 @@ import React from 'react';
 
 // 클래스 상속 : 클래스에 다른 클래스의 기능을 추가하는 것을 지칭
 class App extends React.Component {
+
+  constructor(props) {
+    super(props);
+    console.log('hello props');
+  }
   // App 클래스에 React.Component를 상속시킨다.
   // React.Component 클래스의 기능을 추가한 App 클래스
   // state 변경시 render 함수를 다시 실행
@@ -48,6 +53,7 @@ class App extends React.Component {
   // 함수형 컴포넌트는 return 문이 JRX를 반환
   // 클래스형 컴포넌트는 render() 함수가 JSX를 반환
   render() {
+    console.log('render start');
     return (
       <div>
         <h1>The number is : {this.state.count}</h1>
