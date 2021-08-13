@@ -11,18 +11,22 @@ function Food({ name, picture }) {
 
 const foodLike = [
   {
+    id: 1,
     name: 'Kimchi',
     image: 'http://via.placeholder.com/300x100/000FF/808080'
   },
   {
+    id: 2,
     name: 'Coffee',
     image: 'http://via.placeholder.com/300x100/FF0000/FFFFFF'
   },
   {
+    id: 3,
     name: 'Banana',
     image: 'http://via.placeholder.com/300x100/FFFF00/000000'
   },
   {
+    id: 4,
     name: 'Apple',
     image: 'http://via.placeholder.com/300x100/CCCC00/EEEEEE'
   },
@@ -34,7 +38,7 @@ const foodLike = [
 // }
 
 // ES6 함수 사용
-const renderFood = dish => <Food name={dish.name} picture={dish.image} />;
+const renderFood = dish => <Food key={dish.id} name={dish.name} picture={dish.image} />;
 
 function App() {
   console.log(foodLike.map(renderFood));
