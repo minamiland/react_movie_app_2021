@@ -3,6 +3,15 @@ import React from 'react';
 // 클래스 상속 : 클래스에 다른 클래스의 기능을 추가하는 것을 지칭
 class App extends React.Component {
 
+  // React에서 Mount()로 분류하는 생명주기 함수 3가지
+  // render(), constructor(), componentDidMount()
+  
+  // 렌더링 순서
+  // button 클릭 
+  // setState() 함수 실행 
+  // render() 함수 실행
+  // componentDidUpdate() 함수 실행
+
   // 생명주기 학습 1
   constructor(props) {
     super(props);
@@ -13,6 +22,12 @@ class App extends React.Component {
   componentDidMount() {
     console.log('component rendered');
   }
+
+  // 생명주기 학습 3
+  componentDidUpdate() {
+    console.log('I just updated')
+  }
+
   // App 클래스에 React.Component를 상속시킨다.
   // React.Component 클래스의 기능을 추가한 App 클래스
   // state 변경시 render 함수를 다시 실행
