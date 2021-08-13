@@ -5,6 +5,7 @@ class App extends React.Component {
   // App 클래스에 React.Component를 상속시킨다.
   // React.Component 클래스의 기능을 추가한 App 클래스
   // state 변경시 render 함수를 다시 실행
+  // setState 함수로 state와 state를 비교하여 바뀐 데이터만 업데이트
   state = {
       count: 0
   };
@@ -18,7 +19,12 @@ class App extends React.Component {
     // this.setState({count: 1})
 
     // state의 바른 사용법
-    this.setState({count: this.state.count + 1});
+    // this.setState({count: this.state.count + 1});
+
+    // 코드개선
+    this.setState(current => ({
+      count: current.count + 1
+    }));
   };
 
   minus = () => {
@@ -30,7 +36,12 @@ class App extends React.Component {
     // this.setState({count: -1})
 
     // state의 바른 사용법
-    this.setState({count: this.state.count - 1});
+    // this.setState({count: this.state.count - 1});
+
+    // 코드개선
+    this.setState(current => ({
+      count: current.count - 1
+    }));
   };
   
   // 클래스에서는 return 문을 사용할 수 없다.
