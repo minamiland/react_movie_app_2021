@@ -8,8 +8,17 @@ class App extends React.Component {
   };
 
   getMovies = async() => {
-    const movies = await axios.get('https://yts-proxy.now.sh/list_movies.json');
-    console.log(movies)
+    // ES6 구조분해 할당을 위한작업
+    // const movies = await axios.get('https://yts-proxy.now.sh/list_movies.json');
+    
+    // ES6 구조분해 작업
+    // movies.data.data.movies => 좋지 않은 접근 방법
+    const {
+      data: {
+        data: {movies},
+      },
+    } = await axios.get('https://yts-proxy.now.sh/list_movies.json');
+    console.log(movies);
   }
 
   componentDidMount() {
