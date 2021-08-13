@@ -28,6 +28,12 @@ class App extends React.Component {
     console.log('I just updated')
   }
 
+  // 생명주기 학습 4
+  componentWillUnmount() {
+    // 컴포넌트에 등록된 이벤트 리스너 제거시 사용
+    console.log('Goodbye, cruel world');
+  }
+
   // App 클래스에 React.Component를 상속시킨다.
   // React.Component 클래스의 기능을 추가한 App 클래스
   // state 변경시 render 함수를 다시 실행
