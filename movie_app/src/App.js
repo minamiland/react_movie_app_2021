@@ -1,73 +1,17 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-// https://www.npmjs.com/package/prop-types
 
-function Food({ name, picture, rating }) {
-  return (
-    <div>
-      <h2>I like {name}</h2>
-      <h4>{rating}/5.0</h4>
-      <img src={picture} alt={name} />
-    </div>
-  );
+// 클래스 상속 : 클래스에 다른 클래스의 기능을 추가하는 것을 지칭
+class App extends React.Component {
+  // App 클래스에 React.Component를 상속시킨다.
+  // React.Component 클래스의 기능을 추가한 App 클래스
+  
+  // 클래스에서는 return 문을 사용할 수 없다.
+  // 함수형 컴포넌트는 return 문이 JRX를 반환
+  // 클래스형 컴포넌트는 render() 함수가 JSX를 반환
+  render() {
+
+    return <h1>I'm a class Component</h1>;
+  }
 }
-
-const foodLike = [
-  {
-    id: 1,
-    name: 'Kimchi',
-    image: 'http://via.placeholder.com/300x100/000FF/808080',
-    rating: 3
-  },
-  {
-    id: 2,
-    name: 'Coffee',
-    image: 'http://via.placeholder.com/300x100/FF0000/FFFFFF',
-    rating: 4.5
-  },
-  {
-    id: 3,
-    name: 'Banana',
-    image: 'http://via.placeholder.com/300x100/FFFF00/000000',
-    rating: 2.5
-  },
-  {
-    id: 4,
-    name: 'Apple',
-    image: 'http://via.placeholder.com/300x100/CCCC00/EEEEEE',
-    rating: 5
-  },
-];
-
-// ES5 함수 사용
-// function renderFood(dish) {
-//   return <Food name={dish.name} picture={dish.image} />;
-// }
-
-// ES6 함수 사용
-// const renderFood = dish => <Food key={dish.id} name={dish.name} picture={dish.image} />;
-
-function App() {
-  // console.log(foodLike.map(renderFood));
-  return (
-    <div>
-      { 
-        // 외부함수로 분리
-        foodLike.map(dish => (
-          <Food key={dish.id} name={dish.name} picture={dish.image} rating={dish.rating} />
-        ))
-
-        // 외부함수로 관리 
-        // foodLike.map(renderFood)
-      }
-    </div>
-  );
-}
-
-Food.propTypes = {
-  name: PropTypes.string.isRequired,
-  picture: PropTypes.string.isRequired,
-  rating: PropTypes.number
-};
 
 export default App;
