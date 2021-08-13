@@ -38,20 +38,20 @@ const foodLike = [
 // }
 
 // ES6 함수 사용
-const renderFood = dish => <Food key={dish.id} name={dish.name} picture={dish.image} />;
+// const renderFood = dish => <Food key={dish.id} name={dish.name} picture={dish.image} />;
 
 function App() {
-  console.log(foodLike.map(renderFood));
+  // console.log(foodLike.map(renderFood));
   return (
     <div>
       { 
         // 외부함수로 분리
-        // foodLike.map(dish => (
-        //   <Food name={dish.name} picture={dish.image} />
-        // ))
+        foodLike.map(dish => (
+          <Food key={dish.id} name={dish.name} picture={dish.image} />
+        ))
 
         // 외부함수로 관리 
-        foodLike.map(renderFood)
+        // foodLike.map(renderFood)
       }
     </div>
   );
